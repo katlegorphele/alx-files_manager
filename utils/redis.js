@@ -6,7 +6,7 @@ class RedisClient {
     this.client = createClient();
 
     this.client.on("error", (error) => {
-      console.log(`${error.message}`);
+      console.log(error);
     });
   }
 
@@ -26,6 +26,8 @@ class RedisClient {
   async del(key) {
     this.client.del(key);
   }
+
+
 }
 
 const redisClient = new RedisClient();
